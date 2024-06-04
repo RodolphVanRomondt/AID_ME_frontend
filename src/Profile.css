@@ -1,0 +1,10 @@
+.Form {
+    width: 35rem;
+    background-color: lightgrey;
+    padding: 15px;
+}
+
+.Form label {
+    margin-bottom: 0px;
+    font-weight: bold;
+}

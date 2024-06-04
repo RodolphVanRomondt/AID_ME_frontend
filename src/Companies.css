@@ -1,0 +1,25 @@
+.Companies {
+    width: 50rem;
+}
+
+.Companies-Sub {
+    background-color: lightgrey;
+    margin-bottom: 10px;
+    padding: 10px;
+    display: flex;
+    height: 7rem;
+}
+
+.Companies-Img {
+    margin-right: 0px;
+    margin-left: auto;
+    margin-top: auto;
+}
+
+.Companies p {
+    margin: 5px;
+}
+
+.Companies a {
+    text-decoration: none;
+}
