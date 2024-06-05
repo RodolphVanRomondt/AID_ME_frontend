@@ -1,18 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./Companies.css";
 import { Link, useHistory } from "react-router-dom";
 import { Form, FormGroup, Input, Button } from "reactstrap";
 import CompanyCard from "./CompanyCard";
 import JoblyApi from "./Api";
+import UserContext from "./UserContext";
 
 
-const CompanyList = ({user}) => {
+const CompanyList = () => {
 
     const [formData, setFormData] = useState({searchBar: ""});
     const [companies, setCompanies] = useState([]);
+    const { currentUser } = useContext(UserContext);
 
     const history = useHistory();
-    if (!user) history.push("/");
+    if (!currentUser) history.push("/");
 
     async function getCompanies(name) {
         const companies = await JoblyApi.getAllCompanies(name);

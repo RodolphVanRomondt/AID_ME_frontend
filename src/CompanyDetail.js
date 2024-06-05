@@ -2,6 +2,7 @@ import React, {useState, useEffect, useContext} from "react";
 import { Redirect, useParams } from "react-router-dom";
 import JoblyApi from "./Api";
 import Job from "./Job";
+import { useHistory } from "react-router-dom";
 import UserContext from "./UserContext";
 
 
@@ -11,6 +12,9 @@ const CompanyDetail = () => {
     const [company, setCompany] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const { currentUser } = useContext(UserContext);
+
+    const history = useHistory();
+    if (!currentUser) history.push("/");
 
     useEffect(() => {
         async function getCompany() {
