@@ -1,0 +1,33 @@
+.DonationList {
+    position: relative;
+}
+
+.Donation,
+.DonationCard,
+.DonationDetail {
+    width: 20rem;
+    height: 13rem;
+    background-color: lightgrey;
+    padding: 15px;
+    margin: 10px;
+    position: relative;
+    display: inline-block;
+}
+
+.Donation-Text {
+    margin-top: 5rem;
+}
+
+.Donation {
+    top: 3rem;
+}
+
+.DonationCard {
+    top: 50px;
+}
+
+.DonationList button {
+    width: 20vw;
+    position: absolute;
+    left: 40vw;
+}

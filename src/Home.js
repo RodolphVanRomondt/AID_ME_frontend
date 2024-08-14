@@ -6,8 +6,11 @@ import "./Home.css";
 function Home({ user }) {
   return (
     <div className="Home">
-      <h1>Jobly</h1>
-      <p>All the jobs in one, convenient place.</p>
+      <h1>Aid Me</h1>
+      <p>The goal of this website is to alleviate the burden on NGOs
+        by offering a centralized tool designed to assist in every
+        phase of creating, developing, executing, deploying, and
+        managing plans and aid for areas affected by disasters.</p>
       {user ?
         <h2>Welcome Back, {user.firstName}</h2> :
         <div>

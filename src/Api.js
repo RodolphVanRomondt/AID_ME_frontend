@@ -2,15 +2,9 @@ import axios from "axios";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
 
-/** API Class.
- *
- * Static class tying together methods used to get/send to to the API.
- * There shouldn't be any frontend-specific stuff here, and there shouldn't
- * be any API-aware stuff elsewhere in the frontend.
- *
- */
+/* API Class */
 
-class JoblyApi {
+class AidMeApi {
   // the token for interactive with the API will be stored here.
   static token;
 
@@ -19,7 +13,7 @@ class JoblyApi {
     //there are multiple ways to pass an authorization token, this is how you pass it in the header.
     //this has been provided to show you another way to pass the token. you are only expected to read this code for this project.
     const url = `${BASE_URL}/${endpoint}`;
-    const headers = { Authorization: `Bearer ${JoblyApi.token}` };
+    const headers = { Authorization: `Bearer ${AidMeApi.token}` };
     const params = (method === "get")
         ? data
         : {};
@@ -46,34 +40,142 @@ class JoblyApi {
 
   // Individual API routes
 
-  /* Get all companies. */
-  static async getAllCompanies(name = "") {
-    name = !name ? "" : `?name=${name}`;
-    const res = await this.request(`companies/${name}`);
-    return res.companies;
+  /* Get All People. */
+  static async getAllPeople() {
+    const res = await this.request(`people`);
+    return res.people;
   }
 
-  /** Get details on a company by handle. */
-  static async getCompany(handle) {
+  /* Get one person by ID. */
+  static async getPerson(id) {
+    const res = await this.request(`people/${id}`);
+    return res.person;
+  }
+
+  /* Create person */
+  static async postPerson(data) {
     try {
-      let res = await this.request(`companies/${handle}`);
-      return res.company;
+      const res = await this.request(`people`, data, "post");
+      return res.person;
+    } catch (e) {
+      return e;
+    }
+  }
+
+  /* Get all families. */
+  static async getAllFamilies() {
+    const res = await this.request(`families`);
+    return res.families;
+  }
+
+  /* Get details on a family by id. */
+  static async getFamily(id) {
+    try {
+      let res = await this.request(`families/${id}`);
+      return res.family;
     } catch (e) {
       return false;
     }
   }
 
-  /* Get All Jobs. */
-  static async getAllJobs(title = "") {
-    title = !title ? "" : `?title=${title}`;
-    const res = await this.request(`jobs/${title}`);
-    return res.jobs;
+  /* Create a family by passing camp_id and head */
+  static async postFamily(data) {
+    try {
+      const res = await this.request(`families`, data, "post");
+      return res.family;
+    } catch (e) {
+      return false;
+    }
   }
 
-  /* Apply To Job. */
-  static async applyToJob(username, jobId) {
-    const res = await this.request(`users/${username}/jobs/${jobId}`, {}, "post");
-    return res;
+  /* Get all household members. */
+  static async getAllHousehold() {
+    const res = await this.request("families/household");
+    return res.householdAll;
+  }
+
+  /* Add member to family. */
+  static async postHousehold(data) {
+    try {
+      const res = await this.request(`families/${data.family_id}/people/${data.person_id}`, data, "post");
+      return res.household;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  /* Get all donations. */
+  static async getAllDonations() {
+    const res = await this.request(`donations`);
+    return res.donations;
+  }
+
+  /** Get details of a donation by id. */
+  static async getDonation(id) {
+    try {
+      let res = await this.request(`donations/${id}`);
+      return res.donation;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  /* Create donation */
+  static async postDonation(data) {
+    try {
+      const res = await this.request(`donations`, data, "post");
+      return res.donation
+    } catch (e) {
+      return false;
+    }
+  }
+
+  /* Get All New Donations for a family. */
+  static async getAllNewDonations(id) {
+    try {
+      const res = await this.request(`families/${id}/donations`);
+      return res.donations;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  /* Create distribution. */
+  static async postDistribution(data) {
+    try {
+      const res = await this.request(`families/${data.fID}/donations/${data.dID}`, data, "post");
+      return res.distribution;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  /* Get  */
+
+  /* Get All Camps. */
+  static async getAllCamps() {
+    const res = await this.request(`camps`);
+    return res.camps;
+  }
+
+  /* Get camp by ID. */
+  static async getCamp(id) {
+    try {
+      let res = await this.request(`camps/${id}`);
+      return res.camp;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  /* Create new camp. */
+  static async postCamp(data) {
+    try {
+      const res = await this.request("camps", data, "post");
+      return res.camp;
+    } catch (e) {
+      return e;
+    }
   }
 
   /* Get Current User. */
@@ -90,4 +192,4 @@ class JoblyApi {
 }
 
 
-export default JoblyApi;
+export default AidMeApi;

@@ -11,7 +11,7 @@ function NavBar({ logout }) {
     <div>
       <Navbar expand="md">
         <NavLink exact to="/" className="navbar-brand">
-          Jobly
+          Aid Me
         </NavLink>
 
         <Nav className="ml-auto" navbar>
@@ -21,10 +21,11 @@ function NavBar({ logout }) {
               <NavLink to="/signup">Sign Up</NavLink>
             </NavItem> :
             <NavItem>
-              <NavLink to="/companies">Companies</NavLink>
-              <NavLink to="/jobs">Jobs</NavLink>
-              <NavLink to="/profile">Profile</NavLink>
-              <NavLink className="logout" to="/" onClick={logout}>Log Out {currentUser.username}</NavLink>
+              <NavLink to="/camps">Camps</NavLink>
+              <NavLink to="/families">Families</NavLink>
+              <NavLink to="/donations">Donations</NavLink>
+              <NavLink to="/new/person">Create Person</NavLink>
+              <NavLink className="logout" to="/" onClick={logout}>Log Out</NavLink>
             </NavItem> 
           }
         </Nav>

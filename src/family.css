@@ -1,0 +1,10 @@
+
+/* .Family {
+    padding-bottom: 3rem;
+} */
+
+.FamilyButton, .DonationAddButton {
+    width: 20vw;
+    position: absolute;
+    /* left: 40vw; */
+}
