@@ -1,19 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
+import "./Profile.css";
 import { useHistory } from "react-router-dom";
 
+import UserContext from "../auth/UserContext";
 
-const SignUp = ({signup}) => {
 
-    const [formData, setFormData] = useState({
-        username: "",
-        password: "",
-        firstName: "",
-        lastName: "",
-        email: ""
+const Profile = ({ patchUser }) => {
 
-    });
+    const { currentUser, setCurrentUser } = useContext(UserContext);
+    const [formData, setFormData] = useState(currentUser);
+
     const history = useHistory();
+    if (!currentUser) history.push("/");
 
     const handleChange = e => {
         const { name, value } = e.target;
@@ -25,46 +24,41 @@ const SignUp = ({signup}) => {
 
     async function handleSubmit (e) {
         e.preventDefault();
-        const res = await signup(formData);
+
+        const res = await patchUser({
+            firstName: formData.firstName,
+            lastName: formData.lastName,
+            email: formData.email
+        });
+
         if (res.success) {
+            setCurrentUser(formData);
             history.push("/");
         }
     }
 
     return (
-        <div className="SignUp">
-            <h1>Sign Up</h1>
-            <Form className="SignUp-Form Form" onSubmit={handleSubmit}>
+        <div className="Profile">
+            <h1>Profile</h1>
+            <Form className="Profile-Form Form" onSubmit={handleSubmit}>
                 <FormGroup>
                     <Label>Username</Label>
                     <Input
-                        id="username"
+                        id="itemName"
                         name="username"
                         value={formData.username}
-                        placeholder="Username"
-                        onChange={handleChange}
-                    >
-                    </Input>
-                </FormGroup>
-                <FormGroup>
-                    <Label>Password</Label>
-                    <Input
-                        id="password"
-                        name="password"
-                        type="password"
-                        value={formData.password}
-                        placeholder="Password"
-                        onChange={handleChange}
+                        placeholder={formData.username}
+                        disabled
                     >
                     </Input>
                 </FormGroup>
                 <FormGroup>
                     <Label>First Name</Label>
                     <Input
-                        id="firstName"
+                        id="itemDesc"
                         name="firstName"
                         value={formData.firstName}
-                        placeholder="First Name"
+                        placeholder="Last Name"
                         onChange={handleChange}
                     >
                     </Input>
@@ -72,10 +66,10 @@ const SignUp = ({signup}) => {
                 <FormGroup>
                     <Label>Last Name</Label>
                     <Input
-                        id="lastName"
+                        id="itemRecipe"
                         name="lastName"
                         value={formData.lastName}
-                        placeholder="Last Name"
+                        placeholder={formData.lastName}
                         onChange={handleChange}
                     >
                     </Input>
@@ -83,19 +77,19 @@ const SignUp = ({signup}) => {
                 <FormGroup>
                     <Label>Email</Label>
                     <Input
-                        id="email"
+                        id="itemServe"
                         name="email"
                         value={formData.email}
-                        placeholder="Email"
+                        placeholder={formData.email}
                         onChange={handleChange}
                     >
                     </Input>
                 </FormGroup>
-                <Button>Submit</Button>
+                <Button>Save Changes</Button>
             </Form>
         </div>
     )
 }
 
 
-export default SignUp;
+export default Profile;

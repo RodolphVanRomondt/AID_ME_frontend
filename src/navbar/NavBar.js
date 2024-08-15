@@ -2,7 +2,8 @@ import React, { useContext } from "react";
 import "./NavBar.css";
 import { NavLink } from "react-router-dom";
 import { Navbar, Nav, NavItem } from "reactstrap";
-import UserContext from "./UserContext";
+
+import UserContext from "../auth/UserContext";
 
 
 function NavBar({ logout }) {
@@ -18,7 +19,7 @@ function NavBar({ logout }) {
           {!currentUser ?
             <NavItem>
               <NavLink to="/login">Login</NavLink>
-              <NavLink to="/signup">Sign Up</NavLink>
+              {/* <NavLink to="/signup">Sign Up</NavLink> */}
             </NavItem> :
             <NavItem>
               <NavLink to="/camps">Camps</NavLink>

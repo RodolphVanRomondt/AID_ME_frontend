@@ -1,0 +1,104 @@
+
+/* Styling for individual cards */
+.Person, .PersonCard {
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    margin-top: 50px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.Person:hover, .PersonCard:hover {
+    transform: translateY(-5px);
+    background-color: #C7C7C7;
+}
+
+.Person p, .PersonCard p {
+    color: #666;
+    margin: 5px 0;
+}
+
+/* Center the form on the page */
+.PersonNew {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+/* Form styling */
+.PersonNew form {
+    background-color: #fff;
+    padding: 40px 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Form header */
+.PersonNew form h1 {
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+}
+
+/* Label styling */
+.PersonNew form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Input styling */
+.PersonNew form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Button styling */
+.PersonNew form button {
+    width: 45%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #5a6268;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.PersonNew form button:hover {
+    background-color: #495057;
+}
+
+/* Responsive adjustments */
+@media (max-width: 500px) {
+    .PersonNew form {
+        padding: 30px 20px;
+    }
+
+    .CampPersonNewNew form h1 {
+        font-size: 1.5rem;
+    }
+
+    .PersonNew form button {
+        font-size: 1.2rem;
+        margin: 9.3px;
+    }
+}

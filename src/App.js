@@ -1,32 +1,34 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
-import Home from "./Home";
-import NavBar from "./NavBar";
+import Home from "./homepage/Home";
+import NavBar from "./navbar/NavBar";
 import NotFound from "./NotFound";
 import AidMeApi from "./Api";
 
-import CampList from "./CampList";
-import CampDetail from "./CampDetail";
-import CampNew from "./CampNew";
-import CampFamily from "./CampFamily";
+import CampList from "./camps/CampList";
+import CampDetail from "./camps/CampDetail";
+import CampNew from "./camps/CampNew";
+import CampFamily from "./camps/CampFamily";
 
-import Family from "./Family";
-import FamilyList from "./FamilyList";
-import FamilyAddDonation from "./FamilyAddDonation";
+import Family from "./families/Family";
+import FamilyList from "./families/FamilyList";
+import FamilyAddDonation from "./families/FamilyAddDonation";
 
-import DonationList from "./DonationsList";
-import DonationDetail from "./DonationDetail";
-import DonationNew from "./DonationNew";
+import DonationList from "./donations/DonationsList";
+import DonationDetail from "./donations/DonationDetail";
+import DonationNew from "./donations/DonationNew";
 
-import PersonNew from "./PersonNew";
+import PersonNew from "./person/PersonNew";
 
-import Login from "./Login";
-import SignUp from "./SignUp";
-import Profile from "./Profile";
+import Login from "./auth/Login";
+import SignUp from "./auth/SignUp";
+import Profile from "./profile/Profile";
+
 import { jwtDecode } from "jwt-decode";
 import useLocalStorage from "./useLocalStorage";
-import UserContext from "./UserContext";
+
+import UserContext from "./auth/UserContext";
 
 function App() {
 
@@ -146,12 +148,12 @@ function App() {
               <Route path="/login">
                 <Login login={login} />
               </Route>
-              <Route path="/signup">
+              {/* <Route path="/signup">
                 <SignUp signup={signup} />
               </Route>
               <Route path="/profile">
                 <Profile patchUser={patchUser} />
-              </Route>
+              </Route> */}
               <Route>
                 <NotFound />
               </Route>

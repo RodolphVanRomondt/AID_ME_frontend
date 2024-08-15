@@ -1,9 +1,10 @@
 import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { Form, FormGroup, Input, Button, Label } from "reactstrap";
-import "./Camp.css";
-import UserContext from "./UserContext";
-import AidMeApi from "./Api";
+import "./person.css";
+
+import UserContext from "../auth/UserContext";
+import AidMeApi from "../Api";
 
 
 const PersonNew = () => {
@@ -46,9 +47,9 @@ const PersonNew = () => {
     };
 
     return (
-        <div className="Camp">
-            <h1>Create Person To Add To DB</h1>
-            <Form className="Camp-Form Form" onSubmit={handleSubmit}>
+        <div className="PersonNew">
+            <Form className="PersonNew-Form Form" onSubmit={handleSubmit}>
+                <h1>Create Person</h1>
                 <FormGroup>
                     <Label>First Name</Label>
                     <Input
@@ -116,7 +117,7 @@ const PersonNew = () => {
                 </FormGroup>
                 <div className="d-grid gap-2 d-md-flex justify-content-md-between">
                     <Button>Add Person</Button>
-                    <Button className="left" onClick={handleClick}>Cancel</Button>
+                    <Button onClick={handleClick}>Cancel</Button>
                 </div>
 
             </Form>

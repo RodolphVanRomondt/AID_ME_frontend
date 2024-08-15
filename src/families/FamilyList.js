@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
 import FamilyCard from "./FamilyCard";
-import AidMeApi from "./Api";
-import UserContext from "./UserContext";
+
+import AidMeApi from "../Api";
+import UserContext from "../auth/UserContext";
 
 
 const FamilyList = () => {
@@ -27,10 +28,8 @@ const FamilyList = () => {
     if (isLoading) return <p>Loading &hellip;</p>;
 
     return (
-        <div className="Jobs">
-            <div>
-                <h1>Families</h1>
-            </div>
+        <div className="FamilyList">
+            <h1>Families</h1>
             {families.map(
                 family =>
                     <Link to={`/families/${family.id}`} key={family.id}>

@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { Button } from "reactstrap";
-import AidMeApi from "./Api";
-import UserContext from "./UserContext";
-import PersonCard from "./PersonCard";
+import AidMeApi from "../Api";
+import UserContext from "../auth/UserContext";
+import PersonCard from "../person/PersonCard";
 
 const CampFamily = () => {
 
@@ -75,7 +75,7 @@ const CampFamily = () => {
     }
 
     return (
-        <div>
+        <div className="CampFamily">
             <h1>Camp Add Family Members</h1>
 
             <div>

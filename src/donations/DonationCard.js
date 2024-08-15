@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
-import UserContext from "./UserContext";
 import "./Donation.css";
+
+import UserContext from "../auth/UserContext";
 
 
 const DonationCard = ({ donation }) => {
@@ -13,10 +14,8 @@ const DonationCard = ({ donation }) => {
 
     return (
         <div className="DonationCard">
-            <div className="DonationCard-Text">
-                <h3>{donation.description}</h3>
-                <p>Target: Family with {donation.target}+ members.</p>
-            </div>
+            <h3>{donation.description}</h3>
+            <p>Target: Family with {donation.target}+ members.</p>
         </div>
     )
 }

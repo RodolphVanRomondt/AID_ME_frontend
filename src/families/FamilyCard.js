@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useHistory } from "react-router-dom";
-import UserContext from "./UserContext";
-import "./Camp.css";
-import AidMeApi from "./Api";
+import "./family.css";
+
+import UserContext from "../auth/UserContext";
+import AidMeApi from "../Api";
 
 
 const FamilyCard = ({ id }) => {
@@ -26,14 +27,11 @@ const FamilyCard = ({ id }) => {
     }, [id]);
 
     if (isLoading) return <p>Loading &hellip;</p>;
-    // if (!family.id) return <Redirect to="/camps" />;
 
     return (
         <div className="FamilyCard">
-            <div className="FamilyCard-Text">
-                <p>Members: {family.members.length}</p>
-                <p>Donations: {family.donations.length}</p>
-            </div>
+            <p>Members: {family.members.length}</p>
+            <p>Donations: {family.donations.length}</p>
         </div>
     )
 }

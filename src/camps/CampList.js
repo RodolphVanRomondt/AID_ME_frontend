@@ -3,8 +3,8 @@ import "./Camp.css";
 import { Link, useHistory } from "react-router-dom";
 import { Button } from "reactstrap";
 import CampCard from "./CampCard";
-import AidMeApi from "./Api";
-import UserContext from "./UserContext";
+import AidMeApi from "../Api";
+import UserContext from "../auth/UserContext";
 
 
 const CampList = () => {
@@ -35,22 +35,10 @@ const CampList = () => {
 
     return (
         <div className="CampList">
-            {/* <h1>Camps</h1> */}
-            <Button onClick={handleClick}>New Camp</Button>
-            
-            {/* <Form onSubmit={handleSubmit}>
-                <FormGroup>
-                    <Input
-                        id="searchBar"
-                        name="searchBar"
-                        value={formData.searchBar}
-                        placeholder="Enter Search Term"
-                        onChange={handleChange}
-                    >
-                    </Input>
-                    <Button>Submit</Button>
-                </FormGroup>
-            </Form> */}
+            <div className="CampListButton">
+                <Button onClick={handleClick}>New Camp</Button>
+            </div>
+
             {camps.map(
                 camp =>
                     <Link to={`/camps/${camp.id}`} key={camp.id}>

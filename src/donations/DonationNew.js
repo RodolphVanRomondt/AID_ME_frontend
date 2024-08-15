@@ -1,9 +1,10 @@
 import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { Form, FormGroup, Input, Button, Label } from "reactstrap";
-import "./Camp.css";
-import UserContext from "./UserContext";
-import AidMeApi from "./Api";
+import "./Donation.css";
+
+import UserContext from "../auth/UserContext";
+import AidMeApi from "../Api";
 
 
 const DonationNew = () => {
@@ -53,9 +54,9 @@ const DonationNew = () => {
     };
 
     return (
-        <div className="Camp">
-            <h1>Create New Donation</h1>
-            <Form className="Camp-Form Form" onSubmit={handleSubmit}>
+        <div className="DonationNew">
+            <Form className="DonationNew-Form Form" onSubmit={handleSubmit}>
+                <h1>Create Donation</h1>
                 <FormGroup>
                     <Label>Start Date</Label>
                     <Input
@@ -109,7 +110,7 @@ const DonationNew = () => {
                 </FormGroup>
                 <div className="d-grid gap-2 d-md-flex justify-content-md-between">
                     <Button>Create Donation</Button>
-                    <Button className="left" onClick={handleClick}>Cancel</Button>
+                    <Button onClick={handleClick}>Cancel</Button>
                 </div>
 
             </Form>

@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
-import AidMeApi from "./Api";
 import { useHistory } from "react-router-dom";
-import UserContext from "./UserContext";
 import "./Donation.css";
+
+import UserContext from "../auth/UserContext";
+import AidMeApi from "../Api";
+
 
 
 const DonationDetail = () => {
@@ -30,17 +32,15 @@ const DonationDetail = () => {
     if (isLoading) return <p>Loading &hellip;</p>;
 
     return (
-        <>
-            <h1>Donation</h1>
-            <div className="DonationDetail">
-                <div className="DonationDetail-Text">
-                    <h3>{donation.description}</h3>
-                    <p>Start Date: {donation.start_date}</p>
-                    <p>End Date: {donation.end_date}</p>
-                    <p>Target: Family with {donation.target}+ members.</p>
-                </div>
+        <div className="DonationDetail">
+            <h1>Donation Detail</h1>
+            <div className="DonationCard">
+                <h3>{donation.description}</h3>
+                <p>Start Date: {donation.start_date}</p>
+                <p>End Date: {donation.end_date}</p>
+                <p>Target: Family with {donation.target}+ members.</p>
             </div>
-        </>
+        </div>
     )
 }
 

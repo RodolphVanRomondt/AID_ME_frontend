@@ -2,8 +2,8 @@ import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { Form, FormGroup, Input, Button, Label } from "reactstrap";
 import "./Camp.css";
-import UserContext from "./UserContext";
-import AidMeApi from "./Api";
+import UserContext from "../auth/UserContext";
+import AidMeApi from "../Api";
 
 
 const CampNew = () => {
@@ -45,9 +45,10 @@ const CampNew = () => {
     };
 
     return (
-        <div className="Camp">
-            <h1>Create New Camp</h1>
-            <Form className="Camp-Form Form" onSubmit={handleSubmit}>
+        <div className="CampNew">
+            
+            <Form onSubmit={handleSubmit}>
+                <h1>Create New Camp</h1>
                 <FormGroup>
                     <Label>Location</Label>
                     <Input
@@ -83,7 +84,7 @@ const CampNew = () => {
                 </FormGroup>
                 <div className="d-grid gap-2 d-md-flex justify-content-md-between">
                     <Button>Create Camp</Button>
-                    <Button className="left" onClick={handleClick}>Cancel</Button>
+                    <Button onClick={handleClick}>Cancel</Button>
                 </div>
                 
             </Form>

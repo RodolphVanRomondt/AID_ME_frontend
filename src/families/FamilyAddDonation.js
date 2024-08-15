@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { Button } from "reactstrap";
-import AidMeApi from "./Api";
-import UserContext from "./UserContext";
-import DonationCard from "./DonationCard";
+
+import AidMeApi from "../Api";
+import UserContext from "../auth/UserContext";
+import DonationCard from "../donations/DonationCard";
 
 const FamilyAddDonation = () => {
 
@@ -60,7 +61,7 @@ const FamilyAddDonation = () => {
     }
 
     return (
-        <div>
+        <div className="FamilyAddDonation">
             <h1>Add Donation To Family</h1>
 
             <div>

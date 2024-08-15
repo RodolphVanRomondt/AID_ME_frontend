@@ -3,8 +3,9 @@ import "./Donation.css";
 import { Link, useHistory } from "react-router-dom";
 import { Button } from "reactstrap";
 import DonationCard from "./DonationCard";
-import AidMeApi from "./Api";
-import UserContext from "./UserContext";
+
+import AidMeApi from "../Api";
+import UserContext from "../auth/UserContext";
 
 
 const DonationList = () => {
@@ -33,8 +34,9 @@ const DonationList = () => {
 
     return (
         <div className="DonationList">
-
-            <Button onClick={handleClick}>New Donation</Button>
+            <div className="DonationList-Button">
+                <Button onClick={handleClick}>New Donation</Button>
+            </div>
             {donations.map(
                 donation =>
                     <Link to={`/donations/${donation.id}`} key={donation.id}>

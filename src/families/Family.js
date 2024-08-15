@@ -1,12 +1,14 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { Button } from "reactstrap";
-import AidMeApi from "./Api";
-import UserContext from "./UserContext";
-import Person from "./Person";
-import Donation from "./Donation";
-
 import "./family.css";
+
+import AidMeApi from "../Api";
+import UserContext from "../auth/UserContext";
+import Person from "../person/Person";
+import Donation from "../donations/Donation";
+
+
 
 const Family = () => {
 
@@ -43,11 +45,14 @@ const Family = () => {
             {family.members.map(
                 person => <Person person={person} key={person.id} />
             )}
-            <h2 className="Donation-Text">{!family.donations.length ? "No Donation Yet" : "Donations"}</h2>
-            <Button className="DonationAddButton" onClick={handleClick}>Add Donation</Button>
+            <h2>{!family.donations.length ? "No Donation Yet" : "Donations"}</h2>
+            <div className="DonationAddButton">
+                <Button onClick={handleClick}>Add Donation</Button>
+            </div>
             {family.donations.map(
                 donation => <Donation id={donation.id} receive={donation.receive} family_id={family.id} key={donation.id} />
             )}
+            
         </div>
     )
 }

@@ -1,0 +1,80 @@
+/* Center the form on the page */
+.LoginSignUp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+/* Form styling */
+.LoginSignUp form {
+    background-color: #fff;
+    padding: 40px 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Form header */
+.LoginSignUp form h1 {
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+}
+
+/* Label styling */
+.LoginSignUp form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Input styling */
+.LoginSignUp form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Button styling */
+.LoginSignUp form button {
+    width: 45%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #5a6268;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.LoginSignUp form button:hover {
+    background-color: #495057;
+}
+
+/* Responsive adjustments */
+@media (max-width: 500px) {
+    .LoginSignUp form {
+        padding: 30px 20px;
+    }
+
+    .LoginSignUp form h1 {
+        font-size: 1.5rem;
+    }
+
+    .LoginSignUp form button {
+        font-size: 1.2rem;
+        margin: 9.3px;
+    }
+}

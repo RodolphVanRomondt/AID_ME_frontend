@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Redirect, useParams, Link, useHistory } from "react-router-dom";
 import { Button } from "reactstrap";
-import AidMeApi from "./Api";
-import UserContext from "./UserContext";
-import FamilyCard from "./FamilyCard";
+import AidMeApi from "../Api";
+import UserContext from "../auth/UserContext";
+import FamilyCard from "../families/FamilyCard";
 
 
 const CampDetail = () => {
@@ -35,27 +35,27 @@ const CampDetail = () => {
     };
 
     return (
+        
         <div className="CampDetail">
-            <h1>Camp</h1>
-            <div>
-                <p>Add Family To Camp.</p>
-                <Button onClick={handleClick}>Add</Button>
-                
+            <div className="Heading">
+                <h1>Add Family To Camp</h1>
             </div>
-            <div className="CampDetail-Text">
+            <div className="Button">
+                <Button onClick={handleClick}>Add</Button>
+            </div>
+
+            <div className="Description">
                 <h2>{camp.location}</h2>
                 <p>{camp.city}, {camp.country}</p>
-                <p></p>
-                <p>There is {camp.families.length} {camp.families.length > 1? "families": "family"} in this camp.</p>
+                <p>There is {camp.families.length} {camp.families.length > 1 ? "families" : "family"} in this camp.</p>
             </div>
-            <div>
-                {camp.families.map(
-                    id =>
-                        <Link to={`/families/${id}`} key={id}>
-                            <FamilyCard id={id} />
-                        </Link>
-                )}
-            </div>
+
+            {camp.families.map(
+                id =>
+                    <Link to={`/families/${id}`} key={id}>
+                        <FamilyCard id={id} />
+                    </Link>
+            )}
         </div>
     )
 }

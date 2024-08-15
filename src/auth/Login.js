@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import { useHistory } from "react-router-dom";
+import "./LoginSignUp.css";
 
 
 const Login = ({ login }) => {
@@ -30,9 +31,9 @@ const Login = ({ login }) => {
     }
 
     return (
-        <div className="Login">
-            <h1>Log In</h1>
-            <Form className="Login-Form Form" onSubmit={handleSubmit}>
+        <div className="LoginSignUp">
+            <Form onSubmit={handleSubmit}>
+                <h1>Log In</h1>
                 <FormGroup>
                     <Label>Username</Label>
                     <Input
