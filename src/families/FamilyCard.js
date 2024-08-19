@@ -26,7 +26,7 @@ const FamilyCard = ({ id }) => {
 
     }, [id]);
 
-    if (isLoading) return <p>Loading &hellip;</p>;
+    if (isLoading) return <p></p>;
 
     return (
         <div className="FamilyCard">

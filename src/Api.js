@@ -12,8 +12,8 @@ class AidMeApi {
     const url = `${BASE_URL}/${endpoint}`;
     const headers = { Authorization: `Bearer ${AidMeApi.token}` };
     const params = (method === "get")
-        ? data
-        : {};
+      ? data
+      : {};
 
     try {
       return (await axios({ url, method, data, params, headers })).data;
@@ -141,6 +141,16 @@ class AidMeApi {
   static async postDistribution(data) {
     try {
       const res = await this.request(`families/${data.fID}/donations/${data.dID}`, data, "post");
+      return res.distribution;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  /* Update donation for a family. Mark it as True. */
+  static async patchDistribution(data) {
+    try {
+      const res = await this.request(`families/${data.fID}/donations/${data.dID}`, data, "patch");
       return res.distribution;
     } catch (e) {
       return false;

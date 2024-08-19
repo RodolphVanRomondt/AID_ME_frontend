@@ -18,8 +18,6 @@ const Family = () => {
     const [family, setFamily] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
 
-    // const [formData, setFormData] = useState({ searchBar: "" });
-
     const history = useHistory();
     if (!currentUser) history.push("/");
 
@@ -50,9 +48,9 @@ const Family = () => {
                 <Button onClick={handleClick}>Add Donation</Button>
             </div>
             {family.donations.map(
-                donation => <Donation id={donation.id} receive={donation.receive} family_id={family.id} key={donation.id} />
+                donation => <Donation id={donation.id} receive={donation.receive} family={family.id} key={donation.id} />
             )}
-            
+
         </div>
     )
 }

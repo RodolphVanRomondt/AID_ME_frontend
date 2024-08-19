@@ -22,8 +22,8 @@ import DonationNew from "./donations/DonationNew";
 import PersonNew from "./person/PersonNew";
 
 import Login from "./auth/Login";
-import SignUp from "./auth/SignUp";
-import Profile from "./profile/Profile";
+// import SignUp from "./auth/SignUp";
+// import Profile from "./profile/Profile";
 
 import { jwtDecode } from "jwt-decode";
 import useLocalStorage from "./useLocalStorage";
@@ -58,7 +58,7 @@ function App() {
       setToken(token);
       return { success: true };
     } catch (errors) {
-      return {success: false, errors}
+      return { success: false, errors }
     }
   }
 
@@ -66,9 +66,9 @@ function App() {
     try {
       const res = await AidMeApi.updateUser(currentUser.username, pathData);
       setCurrentUser(res);
-      return {success: true}
+      return { success: true }
     } catch (e) {
-      return {success: false}
+      return { success: false }
     }
   }
 
@@ -99,7 +99,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <UserContext.Provider
-          value={{currentUser, setCurrentUser, logout, login, signup}}
+          value={{ currentUser, setCurrentUser, logout, login, signup }}
         >
           <NavBar user={currentUser} logout={logout} />
           <main>
@@ -111,7 +111,7 @@ function App() {
               <Route exact path="/camps">
                 <CampList />
               </Route>
-              <Route path="/camps/:id">
+              <Route exact path="/camps/:id">
                 <CampDetail />
               </Route>
               <Route path="/new/camp">
@@ -134,7 +134,7 @@ function App() {
               <Route exact path="/donations">
                 <DonationList />
               </Route>
-              <Route exact path="/donations/:id">
+              <Route path="/donations/:id">
                 <DonationDetail />
               </Route>
               <Route path="/new/donation">

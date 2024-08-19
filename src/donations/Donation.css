@@ -1,18 +1,22 @@
-.DonationList, .DonationDetail {
+.DonationList,
+.DonationDetail {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     padding: 20px;
 }
-.DonationList-Button, .DonationDetail h1{
+
+.DonationList-Button,
+.DonationDetail h1 {
     display: flex;
     justify-content: center;
     width: 100%;
 }
 
 /* Styling for individual cards */
-.DonationCard, .Donation {
+.DonationCard,
+.Donation {
     background-color: #e0e0e0;
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -23,15 +27,19 @@
     text-align: center;
     transition: transform 0.2s ease-in-out;
 }
-.DonationCard, .Donation {
+
+.DonationCard,
+.Donation {
     height: auto;
 }
 
-.DonationCard:hover, .Donation:hover {
+.DonationCard:hover,
+.Donation:hover {
     transform: translateY(-5px);
     background-color: #C7C7C7;
 
 }
+
 .DonationList a {
     text-decoration: none;
     color: inherit;
@@ -42,7 +50,8 @@
     margin-bottom: 10px;
 }
 
-.DonationCard p, .Donation p {
+.DonationCard p,
+.Donation p {
     color: #666;
     margin: 5px 0;
 }
