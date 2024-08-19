@@ -75,9 +75,11 @@ const FamilyAddDonation = () => {
                 <Button onClick={handleClick}>Back To Family</Button>
             </div>
 
-            {donationList.map(donation =>
-                <DonationCard donation={donation} key={donation.id}/>
-            )}
+            <div className="Family-AddDonation">
+                {donationList.map(donation =>
+                    <DonationCard donation={donation} key={donation.id} />
+                )}
+            </div>
         </div>
     );
 };

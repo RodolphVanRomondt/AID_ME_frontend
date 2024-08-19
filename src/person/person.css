@@ -1,23 +1,25 @@
-
 /* Styling for individual cards */
-.Person, .PersonCard {
+.Person,
+.PersonCard {
     background-color: #e0e0e0;
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin: 10px;
     margin-top: 50px;
-    width: 300px;
-    text-align: center;
+    width: auto;
+    text-align: left;
     transition: transform 0.2s ease-in-out;
 }
 
-.Person:hover, .PersonCard:hover {
+.Person:hover,
+.PersonCard:hover {
     transform: translateY(-5px);
     background-color: #C7C7C7;
 }
 
-.Person p, .PersonCard p {
+.Person p,
+.PersonCard p {
     color: #666;
     margin: 5px 0;
 }
@@ -57,6 +59,7 @@
     margin-bottom: 5px;
     font-weight: bold;
     color: #555;
+    text-align: left;
 }
 
 /* Input styling */

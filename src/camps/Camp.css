@@ -1,22 +1,24 @@
-.CampList, .CampDetail, .CampFamily {
+.CampList,
+.CampDetail,
+.CampFamily {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
-    padding: 20px;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 40px;
 }
 
 /* Styling for individual cards */
 .CampCard {
-    background-color: #e0e0e0;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f2f2f2;
     padding: 20px;
-    margin: 10px;
-    margin-top: 50px;
-    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(33% - 40px);
+    max-width: calc(33% - 40px);
+    min-width: 300px;
     text-align: center;
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease;
 }
 
 .CampCard:hover {
@@ -24,7 +26,8 @@
     background-color: #C7C7C7;
 }
 
-.CampList a, .CampDetail a {
+.CampList a,
+.CampDetail a {
     text-decoration: none;
     color: inherit;
 }
@@ -42,7 +45,11 @@
 .CampDetail {
     text-align: center;
 }
-.CampListButton, .Heading, .Button, .Description {
+
+.CampListButton,
+.Heading,
+.Button,
+.Description {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -51,14 +58,15 @@
 .Description {
     background-color: #C7C7C7;
 }
-.Description, .CampFamily {
+
+.Description {
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     display: inline-block;
     margin: 40px 0 0 0;
 }
 
-.CampFamily select {
+.CampForm select {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -69,7 +77,7 @@
     width: 100px;
 }
 
-.CampFamily select option {
+.CampForm select option {
     padding: 10px;
 }
 
@@ -94,7 +102,7 @@
         width: 100%;
         padding: 15px;
     }
-    
+
     .CampListButton button {
         width: 100%;
         padding: 15px;
@@ -157,6 +165,7 @@
     margin-bottom: 5px;
     font-weight: bold;
     color: #555;
+    text-align: left;
 }
 
 /* Input styling */

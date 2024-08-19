@@ -35,19 +35,20 @@ const CampDetail = () => {
     };
 
     return (
-        
+
         <div className="CampDetail">
-            <div className="Heading">
-                <h1>Add Family To Camp</h1>
-            </div>
-            <div className="Button">
-                <Button onClick={handleClick}>Add</Button>
-            </div>
 
             <div className="Description">
                 <h2>{camp.location}</h2>
                 <p>{camp.city}, {camp.country}</p>
                 <p>There is {camp.families.length} {camp.families.length > 1 ? "families" : "family"} in this camp.</p>
+            </div>
+
+            <div className="Heading">
+                <h1>Add Family To Camp</h1>
+            </div>
+            <div className="Button">
+                <Button onClick={handleClick}>Add</Button>
             </div>
 
             {camp.families.map(

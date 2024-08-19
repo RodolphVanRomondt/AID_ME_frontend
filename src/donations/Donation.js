@@ -26,7 +26,7 @@ const Donation = ({ id, receive, family }) => {
         getDonation();
     }, []);
 
-    if (isLoading) return <p>Loading &hellip;</p>;
+    if (isLoading) return <p></p>;
 
     async function handleClick(e) {
         setReceived(true);
