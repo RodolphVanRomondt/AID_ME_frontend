@@ -15,7 +15,7 @@ const DonationCard = ({ donation }) => {
     return (
         <div className="DonationCard">
             <h3>{donation.description}</h3>
-            <p>Target: Family with {donation.target}+ members.</p>
+            <p><b>Target</b>: Family with {donation.target}+ members.</p>
         </div>
     )
 }

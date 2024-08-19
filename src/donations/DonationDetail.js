@@ -36,9 +36,9 @@ const DonationDetail = () => {
             <h1>Donation Detail</h1>
             <div className="DonationCard">
                 <h3>{donation.description}</h3>
-                <p>Start Date: {donation.start_date}</p>
-                <p>End Date: {donation.end_date}</p>
-                <p>Target: Family with {donation.target}+ members.</p>
+                <p><b>Start Date</b>: {donation.start_date}</p>
+                <p><b>End Date</b>: {donation.end_date}</p>
+                <p><b>Target</b>: Family with {donation.target}+ members.</p>
             </div>
         </div>
     )

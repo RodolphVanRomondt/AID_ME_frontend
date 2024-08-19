@@ -40,8 +40,13 @@
 
     .DonationCard {
         width: 350px;
-        height: 130px;
+        height: 200px;
         margin: 10px auto;
+    }
+
+    .DonationDetail p {
+        /* font-size: 1rem; */
+        text-align: left;
     }
 }
 
