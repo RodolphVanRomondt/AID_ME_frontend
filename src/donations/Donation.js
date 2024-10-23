@@ -24,7 +24,7 @@ const Donation = ({ id, receive, family }) => {
             setIsLoading(false);
         }
         getDonation();
-    }, []);
+    }, [id]);
 
     if (isLoading) return <p></p>;
 

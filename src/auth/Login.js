@@ -24,10 +24,12 @@ const Login = ({ login }) => {
 
     async function handleSubmit (e) {
         e.preventDefault();
+
         const res = await login(formData);
-        if (res.success) {
-            history.push("/");
-        }
+
+        res.success ?
+            history.push("/") :
+            setFormData(INITIAL_STATE);
     }
 
     return (
@@ -39,6 +41,8 @@ const Login = ({ login }) => {
                     <Input
                         id="username"
                         name="username"
+                        type="text"
+                        autoComplete="username"
                         value={formData.username}
                         placeholder="Username"
                         onChange={handleChange}
@@ -51,6 +55,7 @@ const Login = ({ login }) => {
                         id="password"
                         name="password"
                         type="password"
+                        autoComplete="current-password"
                         value={formData.password}
                         placeholder="Password"
                         onChange={handleChange}

@@ -62,15 +62,15 @@ function App() {
     }
   }
 
-  async function patchUser(pathData) {
-    try {
-      const res = await AidMeApi.updateUser(currentUser.username, pathData);
-      setCurrentUser(res);
-      return { success: true }
-    } catch (e) {
-      return { success: false }
-    }
-  }
+  // async function patchUser(pathData) {
+  //   try {
+  //     const res = await AidMeApi.updateUser(currentUser.username, pathData);
+  //     setCurrentUser(res);
+  //     return { success: true }
+  //   } catch (e) {
+  //     return { success: false }
+  //   }
+  // }
 
   useEffect(() => {
     async function getCurrentUser() {
